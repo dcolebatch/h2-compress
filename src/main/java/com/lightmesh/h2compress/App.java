@@ -26,7 +26,7 @@ public class App {
     H2ReWrite app = new H2ReWrite(args[0], args[1]);
     boolean verify_ok = true;
 
-    System.out.print( "Looking for source database '" + app.src_db_file + "'... ");
+    System.out.print( "Looking for source database '" + app.src_db_file + ".h2.db' ... ");
     if( app.verify_src_db() ) {
       System.out.println( "OK.");
     } else {
@@ -37,7 +37,7 @@ public class App {
     if( app.verify_dst_db_file() ) {
 
     } else {
-      System.out.println( "FAIL! Destination database '" + app.dst_db_file + "' already exists.");
+      System.out.println( "FAIL! Destination database '" + app.dst_db_file + ".h2.db' already exists.");
       System.out.println( "rm -rf '" + app.dst_db_file + "' and try again.");
       verify_ok = false;
     }

@@ -27,7 +27,7 @@ public class H2ReWrite
 
   // if src db file exists, we're good.
   public boolean verify_src_db() {
-    File src = new File( src_db_file );
+    File src = new File( src_db_file + ".h2.db" );
     this.src_db_file = src.getAbsolutePath();
     return src.exists();
   }
@@ -35,7 +35,7 @@ public class H2ReWrite
   // Ensure destination DB backup isn't already on the filesystem
   // Returns true if dst_bkp does not exist
   public boolean verify_dst_db_file() {
-    File dst = new File( dst_db_file );
+    File dst = new File( dst_db_file + ".h2.db" );
     this.dst_db_file = dst.getAbsolutePath();
     return !dst.exists();
   }
